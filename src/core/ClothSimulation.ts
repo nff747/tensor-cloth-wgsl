@@ -6,11 +6,12 @@
  */
 
 import { ClothTopology } from '../geometry/ClothMeshGenerator';
-import { xpbdPredictWGSL } from '../shaders/xpbdPredict.wgsl';
-import { xpbdDistanceWGSL } from '../shaders/xpbdDistance.wgsl';
-import { xpbdBendingWGSL } from '../shaders/xpbdBending.wgsl';
-import { xpbdCollisionWGSL } from '../shaders/xpbdCollision.wgsl';
+import { xpbdPredictShader } from '../shaders/xpbdPredict.wgsl';
+import { xpbdDistanceShader } from '../shaders/xpbdDistance.wgsl';
+import { xpbdBendingShader } from '../shaders/xpbdBending.wgsl';
+import { xpbdCollisionShader } from '../shaders/xpbdCollision.wgsl';
 import { normalUpdateWGSL } from '../shaders/normalUpdate.wgsl';
+
 
 export interface SimulationConfig {
   substeps?: number;
@@ -162,25 +163,25 @@ export class ClothSimulation {
     });
 
     // Compile Shader Modules & Pipelines
-    const predictModule = device.createShaderModule({ code: xpbdPredictWGSL });
+    const predictModule = device.createShaderModule({ code: xpbdPredictShader });
     this.predictPipeline = device.createComputePipeline({
       layout: 'auto',
       compute: { module: predictModule, entryPoint: 'main' },
     });
 
-    const distanceModule = device.createShaderModule({ code: xpbdDistanceWGSL });
+    const distanceModule = device.createShaderModule({ code: xpbdDistanceShader });
     this.distancePipeline = device.createComputePipeline({
       layout: 'auto',
       compute: { module: distanceModule, entryPoint: 'main' },
     });
 
-    const bendingModule = device.createShaderModule({ code: xpbdBendingWGSL });
+    const bendingModule = device.createShaderModule({ code: xpbdBendingShader });
     this.bendingPipeline = device.createComputePipeline({
       layout: 'auto',
       compute: { module: bendingModule, entryPoint: 'main' },
     });
 
-    const collisionModule = device.createShaderModule({ code: xpbdCollisionWGSL });
+    const collisionModule = device.createShaderModule({ code: xpbdCollisionShader });
     this.collisionPipeline = device.createComputePipeline({
       layout: 'auto',
       compute: { module: collisionModule, entryPoint: 'main' },
