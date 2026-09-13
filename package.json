@@ -1,0 +1,38 @@
+{
+  "name": "tensor-cloth-wgsl",
+  "version": "1.0.0",
+  "description": "Real-Time XPBD Cloth Simulation & Soft-Body Dynamics Engine in WebGPU / WGSL",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "demo": "npx serve examples"
+  },
+  "keywords": [
+    "webgpu",
+    "wgsl",
+    "cloth-simulation",
+    "xpbd",
+    "position-based-dynamics",
+    "physics-engine",
+    "threejs",
+    "compute-shaders",
+    "soft-body-dynamics",
+    "vram-rendering"
+  ],
+  "author": "nff747",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "@types/three": "^0.165.0",
+    "three": "^0.165.0",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  },
+  "peerDependencies": {
+    "three": ">=0.150.0"
+  }
+}
