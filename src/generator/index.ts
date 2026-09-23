@@ -20,6 +20,19 @@ struct Spring {
     `.trim();
   }
 
+  public generateBendSpringStruct(): string {
+    return `
+struct BendSpring {
+  p1: u32,
+  p2: u32,
+  p3: u32,
+  p4: u32,
+  rest_angle: f32,
+  stiffness: f32,
+};
+    `.trim();
+  }
+
   public generateUniformStruct(): string {
     return `
 struct Uniforms {
