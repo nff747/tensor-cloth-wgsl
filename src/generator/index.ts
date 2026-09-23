@@ -53,13 +53,35 @@ fn computeForces(@builtin(global_invocation_id) id: vec3<u32>) {
     `.trim();
   }
 
+  public generateComputeSprings(): string {
+    return `
+@compute @workgroup_size(64)
+fn computeSprings(@builtin(global_invocation_id) id: vec3<u32>) {
+  let idx = id.x;
+  if (idx >= arrayLength(&springs)) { return; }
+  
+  let s = springs[idx];
+  var p1 = particles[s.p1];
+  var p2 = particles[s.p2];
+  
+  let delta = p2.position - p1.position;
+  let dist = length(delta);
+  let diff = (dist - s.rest_length) / dist;
+  
+  let force = s.stiffness * diff * delta;
+  // Note: needs atomic add for velocity in a real implementation
+}
+    `.trim();
+  }
+
   public generate(): string {
     return [
       this.generateParticleStruct(),
       this.generateSpringStruct(),
       this.generateUniformStruct(),
       this.generateBindings(),
-      this.generateComputeForces()
+      this.generateComputeForces(),
+      this.generateComputeSprings()
     ].join("\n\n");
   }
 }
