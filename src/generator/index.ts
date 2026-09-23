@@ -38,12 +38,28 @@ struct Uniforms {
     `.trim();
   }
 
+  public generateComputeForces(): string {
+    return `
+@compute @workgroup_size(64)
+fn computeForces(@builtin(global_invocation_id) id: vec3<u32>) {
+  let idx = id.x;
+  if (idx >= arrayLength(&particles)) { return; }
+  
+  var p = particles[idx];
+  // Apply gravity
+  p.velocity += uniforms.gravity * uniforms.deltaTime;
+  particles[idx] = p;
+}
+    `.trim();
+  }
+
   public generate(): string {
     return [
       this.generateParticleStruct(),
       this.generateSpringStruct(),
       this.generateUniformStruct(),
-      this.generateBindings()
+      this.generateBindings(),
+      this.generateComputeForces()
     ].join("\n\n");
   }
 }
