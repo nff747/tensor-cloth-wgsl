@@ -20,7 +20,21 @@ struct Spring {
     `.trim();
   }
 
+  public generateUniformStruct(): string {
+    return `
+struct Uniforms {
+  deltaTime: f32,
+  gravity: vec3<f32>,
+  wind: vec3<f32>,
+};
+    `.trim();
+  }
+
   public generate(): string {
-    return this.generateParticleStruct() + "\n\n" + this.generateSpringStruct();
+    return [
+      this.generateParticleStruct(),
+      this.generateSpringStruct(),
+      this.generateUniformStruct()
+    ].join("\n\n");
   }
 }
