@@ -107,6 +107,15 @@ fn computeBendSprings(@builtin(global_invocation_id) id: vec3<u32>) {
     `.trim();
   }
 
+  public generateComputeShearSprings(): string {
+    return `
+@compute @workgroup_size(64)
+fn computeShearSprings(@builtin(global_invocation_id) id: vec3<u32>) {
+  // TODO: implement shear constraints
+}
+    `.trim();
+  }
+
   public generate(): string {
     return [
       this.generateParticleStruct(),
