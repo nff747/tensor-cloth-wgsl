@@ -120,10 +120,14 @@ fn computeShearSprings(@builtin(global_invocation_id) id: vec3<u32>) {
     return [
       this.generateParticleStruct(),
       this.generateSpringStruct(),
+      this.generateBendSpringStruct(),
+      this.generateShearSpringStruct(),
       this.generateUniformStruct(),
       this.generateBindings(),
       this.generateComputeForces(),
-      this.generateComputeSprings()
+      this.generateComputeSprings(),
+      this.generateComputeBendSprings(),
+      this.generateComputeShearSprings()
     ].join("\n\n");
   }
 }
