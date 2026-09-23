@@ -98,6 +98,15 @@ fn computeSprings(@builtin(global_invocation_id) id: vec3<u32>) {
     `.trim();
   }
 
+  public generateComputeBendSprings(): string {
+    return `
+@compute @workgroup_size(64)
+fn computeBendSprings(@builtin(global_invocation_id) id: vec3<u32>) {
+  // TODO: implement bending constraints
+}
+    `.trim();
+  }
+
   public generate(): string {
     return [
       this.generateParticleStruct(),
