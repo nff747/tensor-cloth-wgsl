@@ -33,6 +33,17 @@ struct BendSpring {
     `.trim();
   }
 
+  public generateShearSpringStruct(): string {
+    return `
+struct ShearSpring {
+  p1: u32,
+  p2: u32,
+  rest_length: f32,
+  stiffness: f32,
+};
+    `.trim();
+  }
+
   public generateUniformStruct(): string {
     return `
 struct Uniforms {
