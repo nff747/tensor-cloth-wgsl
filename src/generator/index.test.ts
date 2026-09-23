@@ -18,4 +18,6 @@ test('generates entire shader', () => {
   const wgsl = gen.generate();
   expect(wgsl).toContain('fn computeForces');
   expect(wgsl).toContain('fn computeSprings');
+  expect(wgsl).toContain('fn computeBendSprings');
+  expect(wgsl).toContain('fn computeShearSprings');
 });
