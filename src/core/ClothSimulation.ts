@@ -481,4 +481,39 @@ export class ClothSimulation {
   public getNormalsBuffer(): GPUBuffer | null {
     return this.normalsBuffer;
   }
+
+  public dispose(): void {
+    if (this.positionsBuffer) {
+      this.positionsBuffer.destroy();
+      this.positionsBuffer = null;
+    }
+    if (this.prevPositionsBuffer) {
+      this.prevPositionsBuffer.destroy();
+      this.prevPositionsBuffer = null;
+    }
+    if (this.velocitiesBuffer) {
+      this.velocitiesBuffer.destroy();
+      this.velocitiesBuffer = null;
+    }
+    if (this.normalsBuffer) {
+      this.normalsBuffer.destroy();
+      this.normalsBuffer = null;
+    }
+    if (this.distanceConstraintsBuffer) {
+      this.distanceConstraintsBuffer.destroy();
+      this.distanceConstraintsBuffer = null;
+    }
+    if (this.dihedralConstraintsBuffer) {
+      this.dihedralConstraintsBuffer.destroy();
+      this.dihedralConstraintsBuffer = null;
+    }
+    if (this.simParamsBuffer) {
+      this.simParamsBuffer.destroy();
+      this.simParamsBuffer = null;
+    }
+    if (this.colliderParamsBuffer) {
+      this.colliderParamsBuffer.destroy();
+      this.colliderParamsBuffer = null;
+    }
+  }
 }
