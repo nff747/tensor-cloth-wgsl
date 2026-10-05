@@ -41,7 +41,7 @@ npm start # or python main.py or cargo run
 [![WGSL](https://img.shields.io/badge/Shading-WGSL-ff007f?style=for-the-badge)](https://www.w3.org/TR/WGSL/)
 [![XPBD](https://img.shields.io/badge/Physics-XPBD_Compliance-00ff88?style=for-the-badge)](https://matthias-research.github.io/pages/publications/XPBD.pdf)
 [![Three.js](https://img.shields.io/badge/Render-Three.js_Zero--Copy-black?style=for-the-badge&logo=three.js)](https://threejs.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-Apache_2.0-blue?style=for-the-badge)](LICENSE)
 
 ---
 
@@ -205,4 +205,4 @@ tensor-cloth-wgsl/
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [Apache-2.0 License](LICENSE).
