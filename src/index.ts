@@ -4,6 +4,7 @@ export * from './geometry/ClothMeshGenerator';
 export * from './geometry/ColoredClothMesh';
 export * from './partitioner';
 export * from './solvers';
+export * from './constraints';
 export { xpbdPredictShader, xpbdPredictShader as xpbdPredictWGSL } from './shaders/xpbdPredict.wgsl';
 export { xpbdDistanceShader, xpbdDistanceShader as xpbdDistanceWGSL } from './shaders/xpbdDistance.wgsl';
 export { xpbdBendingShader, xpbdBendingShader as xpbdBendingWGSL } from './shaders/xpbdBending.wgsl';
