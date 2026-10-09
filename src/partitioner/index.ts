@@ -3,3 +3,4 @@ export * from './AdjacencyBuilder';
 export * from './WelshPowellColoring';
 export * from './ColorHistogram';
 export * from './DispatchBufferBuilder';
+export * from './ExecutionPlan';
