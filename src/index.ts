@@ -8,6 +8,7 @@ export * from './constraints';
 export * from './aerodynamics';
 export * from './shaders/xpbdIsometricBending.wgsl';
 export * from './collision';
+export * from './metrics';
 export * from './shaders/aerodynamics.wgsl';
 export { xpbdPredictShader, xpbdPredictShader as xpbdPredictWGSL } from './shaders/xpbdPredict.wgsl';
 export { xpbdDistanceShader, xpbdDistanceShader as xpbdDistanceWGSL } from './shaders/xpbdDistance.wgsl';
