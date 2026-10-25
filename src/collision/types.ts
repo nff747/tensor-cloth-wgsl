@@ -14,6 +14,11 @@ export interface CapsuleCollider {
   radius: number;
 }
 
+export interface BoxCollider {
+  center: [number, number, number];
+  halfExtents: [number, number, number];
+}
+
 export interface CollisionContact {
   particleIndex: number;
   normal: [number, number, number];
