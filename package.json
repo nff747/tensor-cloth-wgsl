@@ -1,7 +1,7 @@
 {
   "name": "tensor-cloth-wgsl",
   "version": "1.1.0",
-  "description": "⚡ Real-Time XPBD Cloth Simulation & Soft-Body Dynamics Engine in WebGPU / WGSL with Graph Coloring & Chebyshev Acceleration",
+  "description": "\u26a1 Real-Time XPBD Cloth Simulation & Soft-Body Dynamics Engine in WebGPU / WGSL with Graph Coloring & Chebyshev Acceleration",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -20,7 +20,7 @@
     "physics-engine",
     "chebyshev-acceleration"
   ],
-  "author": "nff747 <nff747@users.noreply.github.com>",
+  "author": "Lunar Paradox <engineering@lunarparadox.com>",
   "license": "Apache-2.0",
   "dependencies": {
     "three": "^0.186.1"
